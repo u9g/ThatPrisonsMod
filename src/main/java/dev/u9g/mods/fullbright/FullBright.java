@@ -1,8 +1,8 @@
-package net.fabricmc.example.modules.fullbright;
+package dev.u9g.mods.fullbright;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import net.fabricmc.example.mixin.modules.fullbright.ButtonWidgetAccessor;
-import net.fabricmc.example.mixin.modules.fullbright.OptionSliderWidgetAccessor;
+import dev.u9g.mixin.mods.fullbright.ButtonWidgetAccessor;
+import dev.u9g.mixin.mods.fullbright.OptionSliderWidgetAccessor;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.OptionPairWidget;
@@ -67,10 +67,17 @@ public class FullBright {
 
         @Override
         public void mouseReleased(int mouseX, int mouseY) {
-            MinecraftClient.getInstance().options.gamma = 10000;
-            MinecraftClient.getInstance().options.save();
-            ((OptionSliderWidgetAccessor) FullBright.active_brightness_slider).value(1);
-            ((ButtonWidgetAccessor) FullBright.active_brightness_slider).message(FullBright.fullbright_slider_string());
+            if (is_fullbright_enabled()) {
+                MinecraftClient.getInstance().options.gamma = 1.0f;
+                MinecraftClient.getInstance().options.save();
+                ((OptionSliderWidgetAccessor) FullBright.active_brightness_slider).value(1);
+                ((ButtonWidgetAccessor) FullBright.active_brightness_slider).message(I18n.translate(GameOptions.Option.BRIGHTNESS.getName()) + ": " + I18n.translate("options.gamma.max"));
+            } else {
+                MinecraftClient.getInstance().options.gamma = 10000;
+                MinecraftClient.getInstance().options.save();
+                ((OptionSliderWidgetAccessor) FullBright.active_brightness_slider).value(1);
+                ((ButtonWidgetAccessor) FullBright.active_brightness_slider).message(FullBright.fullbright_slider_string());
+            }
         }
     }
 }

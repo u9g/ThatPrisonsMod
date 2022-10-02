@@ -1,4 +1,4 @@
-package net.fabricmc.example.mixin.modules.fullbright;
+package dev.u9g.mixin.mods.fullbright;
 
 import net.minecraft.client.gui.widget.ButtonWidget;
 import org.spongepowered.asm.mixin.Mixin;

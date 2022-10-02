@@ -1,6 +1,6 @@
-package net.fabricmc.example.mixin.modules.fullbright;
+package dev.u9g.mixin.mods.fullbright;
 
-import net.fabricmc.example.modules.fullbright.FullBright;
+import dev.u9g.mods.fullbright.FullBright;
 import net.minecraft.client.options.GameOptions;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

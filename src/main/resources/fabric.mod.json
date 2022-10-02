@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "dev.u9g.Main"
     ],
     "preLaunch": [
-      "net.fabricmc.example.PreLaunch"
+      "dev.u9g.PreLaunch"
     ]
   },
   "mixins": [
@@ -27,7 +27,8 @@
   ],
   "depends": {
     "fabricloader": ">=0.12.0",
-    "minecraft": "1.8.9"
+    "minecraft": "1.8.9",
+    "configlib": "1.0.0"
   },
   "suggests": {
     "another-mod": "*"

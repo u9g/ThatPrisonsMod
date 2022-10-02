@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package dev.u9g;
 
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 
